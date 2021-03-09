@@ -1,0 +1,29 @@
+{
+    "name": "Cleaver Downloader",
+    "description": "Clever_Downloader is a chrome extension which checks for duplicate downloads and hence saves your data",
+    "version": "0.0.1",
+    "manifest_version": 2,
+    "content_scripts": [{
+        "matches": ["<all_urls>"],
+        "js": ["content.js"]
+    }],
+    "browser_action": {
+        "default_popup": "popup.html",
+        "default_title": "Cleaver Downloader",
+        "default_icon": "logo.png"
+    },
+    "permissions": ["activeTab"],
+    "commands": {
+        "_execute_browser_action": {
+            "description": "Clever_Downloader is a chrome extension which checks for duplicate downloads and hence saves your data"
+        }
+    },
+    "icons": {
+
+        "16": "/logo_16.png",
+        "24": "/logo_24.png",
+        "32": "/logo_32.png",
+        "48": "/logo_48.png",
+        "128": "/logo_128.png"
+    }
+}
