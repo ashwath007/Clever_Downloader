@@ -22,11 +22,22 @@ chrome.tabs.executeScript(null, { file: './foreground.js' }, () => {
 
 
 chrome.downloads.onDeterminingFilename.addListener(function(item, suggest) {
-    suggest({
-        filename: item.filename,
-        conflict_action: 'prompt',
-        conflictAction: 'prompt',
+    console.log(item.finalUrl)
+    chrome.downloads.search({}, (all_d) => {
+        all_d.map((D) => {
+            if (item.finalUrl == D.url) {
+                // suggest({
+                //     filename: item.filename,
+                //     conflict_action: 'prompt',
+                //     conflictAction: 'prompt',
 
+                // });
+                console.log('Already there')
+            } else {
+                console.log('Not there')
+
+            }
+        })
     });
 
 });
