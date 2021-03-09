@@ -1,0 +1,33 @@
+{
+    "name": "Search.LY",
+    "description": "Search.LY, a quick dictionary for you.",
+    "version": "0.0.1",
+    "manifest_version": 2,
+    "content_scripts": [{
+        "matches": ["<all_urls>"],
+        "js": ["content.js"]
+    }],
+    "browser_action": {
+        "default_popup": "popup.html",
+        "default_title": "Search.LY",
+        "default_icon": "logo.png"
+    },
+    "permissions": ["activeTab"],
+    "commands": {
+        "_execute_browser_action": {
+            "description": "Search.LY a quick dictionary for you",
+            "suggested_key": {
+                "default": "Ctrl+M",
+                "mac": "MacCtrl+M"
+            }
+        }
+    },
+    "icons": {
+
+        "16": "/logo_16.png",
+        "24": "/logo_24.png",
+        "32": "/logo_32.png",
+        "48": "/logo_48.png",
+        "128": "/logo_128.png"
+    }
+}
