@@ -42,18 +42,18 @@
 
 // });
 
-chrome.runtime.onInstalled.addListener(function() {
+// chrome.runtime.onInstalled.addListener(function() {
 
-    chrome.declarativeContent.onPageChanged.removeRules(undefined, function() {
-        chrome.declarativeContent.onPageChanged.addRules([{
-            conditions: [new chrome.declarativeContent.PageStateMatcher({
-                // Comment below line so that PageStateMatcher match any pages
-                // pageUrl: {hostEquals: 'developer.chrome.com'},
-            })],
-            actions: [new chrome.declarativeContent.ShowPageAction()]
-        }]);
-    });
-});
+//     chrome.declarativeContent.onPageChanged.removeRules(undefined, function() {
+//         chrome.declarativeContent.onPageChanged.addRules([{
+//             conditions: [new chrome.declarativeContent.PageStateMatcher({
+//                 // Comment below line so that PageStateMatcher match any pages
+//                 // pageUrl: {hostEquals: 'developer.chrome.com'},
+//             })],
+//             actions: [new chrome.declarativeContent.ShowPageAction()]
+//         }]);
+//     });
+// });
 
 
 chrome.downloads.onChanged.addListener(function(item, suggest) {
@@ -65,13 +65,17 @@ chrome.downloads.onChanged.addListener(function(item, suggest) {
             if (item.filename.current === all_d[i].filename) {
                 console.log('file already exist')
                 chrome.downloads.onDeterminingFilename.addListener(function(item, suggest) {
-                    // suggest({
-                    //     filename: item.filename,
-                    //     conflict_action: 'prompt',
-                    //     conflictAction: 'prompt',
+                    suggest({
+                        filename: item.filename,
+                        conflict_action: 'prompt',
+                        conflictAction: 'prompt',
 
-                    // });
-                    window.open("popup.html", "extension_popup", "width=300,height=400,status=no,scrollbars=yes,resizable=no");
+                    });
+
+
+                    // window.open("popup.html", "extension_popup", "width=300,height=400,status=no,scrollbars=yes,resizable=no");
+
+
                 });
                 break
 

@@ -19,11 +19,8 @@
     "permissions": ["activeTab", "downloads"],
     "commands": {
         "_execute_browser_action": {
-            "description": "Clever_Downloader is a chrome extension which checks for duplicate downloads and hence saves your data",
-            "suggested_key": {
-                "default": "Ctrl+M",
-                "mac": "MacCtrl+M"
-            }
+            "description": "Clever_Downloader is a chrome extension which checks for duplicate downloads and hence saves your data"
+
         }
     },
 
