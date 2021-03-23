@@ -3,8 +3,11 @@
 <br />
 <p align="center">
   
-    <img src="cd.png" alt="Logo" width="80" height="80">
-  
+ 
+  <a>
+       <img src="cd.png" alt="Logo" width="80" height="80">
+  </a>
+
 
   <h3 align="center">Clever Downloader</h3>
 
